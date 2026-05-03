@@ -123,7 +123,7 @@ html { background: #0F0F0F; }
 body {
   opacity: 0;
   transform: scale(0.97);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 body.page-ready {
   opacity: 1;
@@ -143,7 +143,7 @@ body.page-ready {
 function fadeToPage(url){
   document.body.style.opacity = '0';
   document.body.style.transform = 'scale(0.97)';
-  setTimeout(function(){ window.location.href = url; }, 650);
+  setTimeout(function(){ window.location.href = url; }, 350);
 }
 window.addEventListener('DOMContentLoaded', function(){
   requestAnimationFrame(function(){
@@ -280,31 +280,26 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  /* Smooth scroll-to-boundary transition (touch) */
-  let lastTouchY=0, touchLock=false;
+  /* Smooth scroll-to-boundary transition (touch) — triggers on finger release */
+  let touchStartY=0;
   document.addEventListener('touchstart', e=>{
-    lastTouchY=e.touches[0].clientY;
-    touchLock=false;
+    touchStartY=e.touches[0].clientY;
   },{passive:true});
-  document.addEventListener('touchmove', e=>{
-    if(touchLock) return;
-    const y=e.touches[0].clientY;
-    const dy=lastTouchY-y;
-    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-20);
-    const atTop=window.scrollY<=10;
-    if(atBottom && dy>10 && idx<pageOrder.length-1){ touchLock=true; fadeToPage(pageOrder[idx+1]); return; }
-    if(atTop && dy<-10 && idx>0){ touchLock=true; fadeToPage(pageOrder[idx-1]); return; }
-    lastTouchY=y;
+  document.addEventListener('touchend', e=>{
+    const endY=e.changedTouches[0].clientY;
+    const dy=touchStartY-endY; // positive = scrolled down overall
+    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-30);
+    const atTop=window.scrollY<=15;
+    if(atBottom && dy>40 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
+    if(atTop && dy<-40 && idx>0) fadeToPage(pageOrder[idx-1]);
   },{passive:true});
 
   /* Smooth scroll-to-boundary transition (wheel/desktop) */
-  let wheelLock=false;
   window.addEventListener('wheel', e=>{
-    if(wheelLock) return;
-    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-20);
-    const atTop=window.scrollY<=10;
-    if(atBottom && e.deltaY>0 && idx<pageOrder.length-1){ wheelLock=true; fadeToPage(pageOrder[idx+1]); }
-    if(atTop && e.deltaY<0 && idx>0){ wheelLock=true; fadeToPage(pageOrder[idx-1]); }
+    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-30);
+    const atTop=window.scrollY<=15;
+    if(atBottom && e.deltaY>0 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
+    if(atTop && e.deltaY<0 && idx>0) fadeToPage(pageOrder[idx-1]);
   },{passive:true});
 })();
 </script>
