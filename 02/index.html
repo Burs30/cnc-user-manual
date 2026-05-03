@@ -102,16 +102,10 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.3); }
-            50% { box-shadow: 0 0 0 8px rgba(196, 30, 58, 0); }
-        }
-
         .anim-fade-up {
             animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
             opacity: 0;
@@ -122,8 +116,6 @@
         .d-400 { animation-delay: 0.4s; }
         .d-500 { animation-delay: 0.5s; }
         .d-600 { animation-delay: 0.6s; }
-        .d-700 { animation-delay: 0.7s; }
-
         .screenshot-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -144,12 +136,8 @@
         .btn-nav {
             transition: transform 0.15s ease, filter 0.2s ease;
         }
-        .btn-nav:hover {
-            filter: brightness(1.1);
-        }
-        .btn-nav:active {
-            transform: scale(0.96);
-        }
+        .btn-nav:hover { filter: brightness(1.1); }
+        .btn-nav:active { transform: scale(0.96); }
     </style>
 <style>
     body { min-height: max(884px, 100dvh); }
@@ -157,12 +145,11 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-<!-- TopAppBar -->
 <nav class="flex items-center w-full px-6 h-16 bg-[#0F0F0F] border-b border-white/5 sticky top-0 z-50">
-<a href="../01_getting_started/code.html" class="font-['Inter'] text-[12px] tracking-[0.1em] uppercase font-bold text-[#A0A0A0] hover:text-[#FAFAF8] transition-colors no-underline cursor-pointer">USER MANUAL</a>
+<a href="/start/" class="font-['Inter'] text-[12px] tracking-[0.1em] uppercase font-bold text-[#A0A0A0] hover:text-[#FAFAF8] transition-colors no-underline cursor-pointer">USER MANUAL</a>
 <div class="flex-1 flex justify-center gap-2">
-<div class="w-2 h-2 rounded-full bg-[#C41E3A] animate-pulse"></div>
 <div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A] animate-pulse"></div>
 <div class="w-2 h-2 rounded-full bg-white/20"></div>
 <div class="w-2 h-2 rounded-full bg-white/20"></div>
 <div class="w-2 h-2 rounded-full bg-white/20"></div>
@@ -171,29 +158,25 @@
 </div>
 </nav>
 
-<!-- Main Content Canvas -->
 <main class="flex-grow px-6 pt-8 pb-32 max-w-2xl mx-auto w-full">
 
-<!-- Step Header -->
 <header class="mb-8 anim-fade-up d-100">
-<p class="text-[12px] font-bold uppercase tracking-widest text-[#A0A0A0] mb-2 font-label">Step 1 of 7</p>
-<h2 class="font-h2 text-h2 text-[#FAFAF8] leading-tight">Creating an Account</h2>
+<p class="text-[12px] font-bold uppercase tracking-widest text-[#A0A0A0] mb-2 font-label">Step 2 of 7</p>
+<h2 class="font-h2 text-h2 text-[#FAFAF8] leading-tight">Logging In</h2>
 </header>
 
-<!-- Screenshot Card -->
 <div class="w-full max-w-[300px] mx-auto mb-10 anim-fade-up d-200 max-h-[45vh] overflow-hidden rounded-[16px]">
-            <img src="screen.png" alt="Create Account Screen" class="w-full h-auto rounded-[16px] shadow-[0_12px_40px_rgba(0,0,0,0.5)]"/>
+            <img src="screen.png" alt="Login Screen" class="w-full h-auto rounded-[16px] shadow-[0_12px_40px_rgba(0,0,0,0.5)]"/>
         </div>
 
-<!-- Instruction List -->
 <section class="space-y-6 mb-10">
 <div class="step-item flex gap-4 anim-fade-up d-300">
 <div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
 <span class="text-[11px] font-bold text-white">1</span>
 </div>
 <div>
-<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Open the Sign-Up Page</h3>
-<p class="text-[14px] text-[#A0A0A0] leading-relaxed">From the homepage, click <strong class="text-[#FAFAF8]">Sign In</strong>, then tap <strong class="text-[#FAFAF8]">Create account</strong> at the bottom.</p>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Open Sign In</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Tap the <strong class="text-[#FAFAF8]">Sign In</strong> button at the top-right of the homepage.</p>
 </div>
 </div>
 <div class="step-item flex gap-4 anim-fade-up d-400">
@@ -201,8 +184,8 @@
 <span class="text-[11px] font-bold text-white">2</span>
 </div>
 <div>
-<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Fill In Your Details</h3>
-<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Enter your First Name, Last Name, Email, Phone (+63), and create a Password (min 8 characters with uppercase, number &amp; symbol).</p>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Enter Your Credentials</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Type your <strong class="text-[#FAFAF8]">Email Address</strong> and <strong class="text-[#FAFAF8]">Password</strong>. Tap the eye icon if you need to double-check your password.</p>
 </div>
 </div>
 <div class="step-item flex gap-4 anim-fade-up d-500">
@@ -210,8 +193,8 @@
 <span class="text-[11px] font-bold text-white">3</span>
 </div>
 <div>
-<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Complete Your Profile</h3>
-<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Select your Gender, enter your Birthday, and choose your Province, City, and Barangay from the dropdowns.</p>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Sign In or Use Google</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Click <strong class="text-[#FAFAF8]">Sign In</strong> — or tap <strong class="text-[#FAFAF8]">Google Sign-In</strong> for instant access without typing a password.</p>
 </div>
 </div>
 <div class="step-item flex gap-4 anim-fade-up d-600">
@@ -219,39 +202,37 @@
 <span class="text-[11px] font-bold text-white">4</span>
 </div>
 <div>
-<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Add a Referral Code (Optional)</h3>
-<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Got a code from a friend? Enter it to earn a <strong class="text-[#C9A84C]">bonus loyalty stamp</strong> for both of you.</p>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Two-Factor Authentication</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">If you enabled <strong class="text-[#FAFAF8]">2FA</strong>, enter the 6-digit code from your authenticator app (Google Authenticator, Authy).</p>
 </div>
 </div>
-<div class="step-item flex gap-4 anim-fade-up d-700">
+<div class="step-item flex gap-4 anim-fade-up d-600">
 <div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
 <span class="text-[11px] font-bold text-white">5</span>
 </div>
 <div>
-<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Confirm &amp; Verify</h3>
-<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Agree to the <strong class="text-[#FAFAF8]">Terms &amp; Conditions</strong> and <strong class="text-[#FAFAF8]">Privacy Policy</strong>, then click <strong class="text-[#FAFAF8]">Create Account</strong>. Check your email and click the verification link.</p>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Forgot Password?</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Tap <strong class="text-[#C41E3A]">Forgot password?</strong> to receive a reset link via email. Follow the link to set a new password.</p>
 </div>
 </div>
 </section>
 
-<!-- Pro Tip -->
 <div class="bg-[#C9A84C]/10 border-l-2 border-[#C9A84C] p-5 rounded-r-[4px] anim-fade-up d-700">
 <div class="flex items-center gap-2 mb-2">
 <span class="material-symbols-outlined text-[#C9A84C] text-sm" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
 <span class="text-[#C9A84C] text-[12px] font-bold uppercase tracking-widest">Pro Tip:</span>
 </div>
-<p class="text-sm text-[#e6c364]/80 leading-relaxed">Use a referral code during signup — both you and your friend get a bonus loyalty stamp toward a free haircut!</p>
+<p class="text-sm text-[#e6c364]/80 leading-relaxed">Enable 2FA in Security Settings for extra account protection — it only takes 30 seconds to set up.</p>
 </div>
 
 </main>
 
-<!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between px-4 pb-4 pointer-events-none">
-<a href="../01_getting_started/code.html" class="pointer-events-auto btn-nav bg-white/10 border border-white/40 text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
+<a href="/01/" class="pointer-events-auto btn-nav bg-white/10 border border-white/40 text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
 <span class="material-symbols-outlined mr-1 text-[16px]" data-icon="arrow_back">arrow_back</span>
             ← PREV
         </a>
-<a href="../03_logging_in/code.html" class="pointer-events-auto btn-nav bg-[#C41E3A] text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest shadow-lg shadow-[#C41E3A]/20 no-underline">
+<a href="/03/" class="pointer-events-auto btn-nav bg-[#C41E3A] text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest shadow-lg shadow-[#C41E3A]/20 no-underline">
             NEXT →
             <span class="material-symbols-outlined ml-1 text-[16px]" data-icon="arrow_forward">arrow_forward</span>
 </a>

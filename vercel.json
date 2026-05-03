@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/stitch_cnc_barbershop_user_manual/01_getting_started/code.html"
+      "destination": "/start/"
     }
   ]
 }
