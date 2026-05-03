@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#0F0F0F",
+                        "primary-container": "#c41e3a",
+                        "secondary": "#e6c364",
+                        "on-surface": "#f9dcdb",
+                    },
+                    fontFamily: {
+                        h2: ["Inter"],
+                        body: ["Inter"],
+                        label: ["Inter"],
+                        h1: ["Inter"]
+                    },
+                    fontSize: {
+                        h2: ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700"}],
+                        h1: ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0F0F0F;
+            color: #FAFAF8;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.6); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .anim-fade-up {
+            animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+        }
+        .anim-scale-in {
+            animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+        .d-100 { animation-delay: 0.1s; }
+        .d-200 { animation-delay: 0.2s; }
+        .d-300 { animation-delay: 0.3s; }
+        .d-400 { animation-delay: 0.4s; }
+        .d-500 { animation-delay: 0.5s; }
+        .d-600 { animation-delay: 0.6s; }
+        .d-700 { animation-delay: 0.7s; }
+        .btn-primary {
+            transition: transform 0.15s ease, filter 0.2s ease;
+        }
+        .btn-primary:hover { filter: brightness(1.1); }
+        .btn-primary:active { transform: scale(0.96); }
+        .btn-ghost {
+            transition: transform 0.15s ease, background-color 0.2s ease;
+        }
+        .btn-ghost:hover { background-color: rgba(255,255,255,0.08); }
+        .btn-ghost:active { transform: scale(0.96); }
+        body { min-height: max(884px, 100dvh); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+<nav class="flex items-center w-full px-6 h-16 bg-[#0F0F0F] border-b border-white/5 sticky top-0 z-50">
+<a href="../01_getting_started/code.html" class="font-['Inter'] text-[12px] tracking-[0.1em] uppercase font-bold text-[#A0A0A0] hover:text-[#FAFAF8] transition-colors no-underline cursor-pointer">USER MANUAL</a>
+<div class="flex-1 flex justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A]"></div>
+</div>
+</nav>
+
+<main class="flex-grow px-6 pt-12 pb-36 max-w-2xl mx-auto w-full flex flex-col items-center text-center">
+
+<!-- Check icon -->
+<div class="anim-scale-in d-100 mb-8">
+    <div class="w-24 h-24 rounded-full bg-[#C41E3A]/15 border border-[#C41E3A]/30 flex items-center justify-center mx-auto">
+        <span class="material-symbols-outlined text-[#C41E3A] text-[48px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+    </div>
+</div>
+
+<!-- Headline -->
+<div class="anim-fade-up d-200 mb-3">
+    <p class="text-[12px] font-bold uppercase tracking-widest text-[#C41E3A] mb-3">All Done!</p>
+    <h2 class="font-['Inter'] text-[32px] font-bold text-[#FAFAF8] leading-tight tracking-tight">You're Ready to<br/>Book Your Cut</h2>
+</div>
+
+<p class="anim-fade-up d-300 text-[15px] text-[#A0A0A0] leading-relaxed mb-10 max-w-[280px]">
+    You've completed the guide. Head to the Cut 'n Comb website to book your first appointment.
+</p>
+
+<!-- CTA -->
+<div class="anim-fade-up d-400 w-full max-w-[300px] mb-4">
+    <a href="https://sindalan.cncbarbershop.com" class="btn-primary w-full bg-[#C41E3A] text-white rounded-full h-[56px] flex items-center justify-center gap-2 font-['Inter'] text-[13px] font-bold uppercase tracking-widest shadow-lg shadow-[#C41E3A]/25 no-underline">
+        <span class="material-symbols-outlined text-[18px]" data-icon="scissors" style="font-variation-settings: 'FILL' 1;">content_cut</span>
+        Book an Appointment
+    </a>
+</div>
+
+<!-- Secondary action -->
+<div class="anim-fade-up d-500 w-full max-w-[300px]">
+    <a href="../01_getting_started/code.html" class="btn-ghost w-full border border-white/10 text-[#A0A0A0] rounded-full h-[44px] flex items-center justify-center gap-2 font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
+        <span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+        Review Guide
+    </a>
+</div>
+
+<!-- Divider + summary tiles -->
+<div class="anim-fade-up d-600 w-full max-w-[300px] mt-12">
+    <p class="text-[11px] uppercase tracking-widest text-[#A0A0A0]/60 mb-5">What you learned</p>
+    <div class="grid grid-cols-2 gap-2 text-left">
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3">
+            <span class="material-symbols-outlined text-[#C41E3A] text-[16px]" style="font-variation-settings: 'FILL' 1;">person_add</span>
+            <p class="text-[12px] text-[#FAFAF8] font-semibold mt-1">Account</p>
+        </div>
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3">
+            <span class="material-symbols-outlined text-[#C41E3A] text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+            <p class="text-[12px] text-[#FAFAF8] font-semibold mt-1">Login</p>
+        </div>
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3">
+            <span class="material-symbols-outlined text-[#C41E3A] text-[16px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            <p class="text-[12px] text-[#FAFAF8] font-semibold mt-1">Booking</p>
+        </div>
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3">
+            <span class="material-symbols-outlined text-[#C41E3A] text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <p class="text-[12px] text-[#FAFAF8] font-semibold mt-1">Loyalty</p>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<!-- Bottom nav — only prev -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-start px-4 pb-4 pointer-events-none">
+<a href="../08_security_support/code.html" class="pointer-events-auto btn-ghost bg-white/10 border border-white/40 text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
+    <span class="material-symbols-outlined mr-1 text-[16px]" data-icon="arrow_back">arrow_back</span>
+    ← PREV
+</a>
+</nav>
+
+</body>
+</html>
