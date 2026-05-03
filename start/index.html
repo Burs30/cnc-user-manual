@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -168,77 +171,149 @@
 <style>
     body { min-height: max(884px, 100dvh); }
   </style>
+
+<style>
+html { background: #0F0F0F; }
+body {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+body.page-ready {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>
 </head>
-<body class="antialiased selection:bg-primary-container selection:text-white">
-
-
+<body class="antialiased selection:bg-primary-container selection:text-white h-[100dvh] overflow-hidden flex flex-col">
 
 <!-- Main Content Canvas -->
-<main class="min-h-screen flex flex-col justify-center px-6 pt-8 pb-32">
-<div class="max-w-md mx-auto w-full space-y-8 text-left">
-
-
+<main class="flex-1 flex flex-col justify-start px-6 py-5">
+<div class="max-w-md mx-auto w-full flex flex-col h-full">
 
 <!-- Headlines -->
-<div class="space-y-4">
+<div class="space-y-2 mt-1">
 <div class="space-y-1 anim-fade-up d-200">
-<p class="text-[#A0A0A0] text-[12px] uppercase tracking-widest font-bold">Cut'n Comb Sindalan Barbershop</p>
-<h1 class="font-h1 text-h1 text-[#FAFAF8] tracking-[-0.02em]">User Manual</h1>
+<p class="text-[#A0A0A0] text-[11px] uppercase tracking-widest font-bold">Cut'n Comb Sindalan Barbershop</p>
+<h1 class="font-h1 text-h1 text-[#FAFAF8] tracking-[-0.02em] leading-tight">User Manual</h1>
 </div>
-<p class="text-[20px] italic text-[#C9A84C] font-medium anim-fade-up d-300">Customer Guide</p>
+<p class="text-[16px] italic text-[#C9A84C] font-medium anim-fade-up d-300">Customer Guide</p>
 </div>
 
 <!-- Description -->
-<p class="text-[15px] text-[#A0A0A0] leading-relaxed anim-fade-up d-400">
+<p class="text-[13px] text-[#A0A0A0] leading-snug anim-fade-up d-400 line-clamp-2">
             This guide walks you through every feature of the Cut 'n Comb booking system — from creating your account to earning your free haircut.
         </p>
 
 <!-- What's Inside -->
-<div class="space-y-3 anim-fade-up d-500">
-<p class="text-[12px] font-bold uppercase tracking-widest text-[#A0A0A0]">What's Inside</p>
+<div class="space-y-2 anim-fade-up d-500">
+<p class="text-[11px] font-bold uppercase tracking-widest text-[#A0A0A0]">What's Inside</p>
 <div class="grid grid-cols-2 gap-3">
-<a href="/01/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/01/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">01</span>
 <span class="text-[13px] text-[#FAFAF8]">Create Account</span>
 </a>
-<a href="/02/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/02/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">02</span>
 <span class="text-[13px] text-[#FAFAF8]">Log In</span>
 </a>
-<a href="/03/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/03/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">03</span>
 <span class="text-[13px] text-[#FAFAF8]">Explore App</span>
 </a>
-<a href="/04/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/04/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">04</span>
 <span class="text-[13px] text-[#FAFAF8]">Book</span>
 </a>
-<a href="/05/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/05/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">05</span>
 <span class="text-[13px] text-[#FAFAF8]">Manage</span>
 </a>
-<a href="/06/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/06/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">06</span>
 <span class="text-[13px] text-[#FAFAF8]">Profile</span>
 </a>
-<a href="/07/" class="bg-[#1A1A1A] border border-white/5 rounded-[12px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
+<a href="/07/?v=2" class="bg-[#1A1A1A] border border-white/5 rounded-[10px] p-3 flex items-center gap-2 cursor-pointer hover:bg-white/5 hover:border-[#C41E3A]/30 transition-all active:scale-[0.97] no-underline">
 <span class="text-[#C41E3A] text-[11px] font-bold">07</span>
 <span class="text-[13px] text-[#FAFAF8]">Security</span>
 </a>
 </div>
 </div>
 
+<div class="flex-1 min-h-[20px]"></div>
+
+<!-- Swipe Indicator -->
+<div class="swipe-indicator flex flex-col items-center gap-1.5 pointer-events-auto anim-fade-up d-700 pb-4 mt-2">
+    <svg class="swipe-hand" width="48" height="48" viewBox="0 0 64 64" fill="none">
+        <path d="M38 10c0-2.2-1.8-4-4-4s-4 1.8-4 4v16" stroke="#A0A0A0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M30 26V14c0-2.2-1.8-4-4-4s-4 1.8-4 4v16" stroke="#A0A0A0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M22 30V20c0-2.2-1.8-4-4-4s-4 1.8-4 4v20c0 6 4 12 10 14h12c6 0 12-4 14-10l4-12c1-3-1-6-4-7s-6 1-7 4l-2 6V14c0-2.2-1.8-4-4-4s-4 1.8-4 4v12" stroke="#FAFAF8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 32 L4 32 M8 26 L4 32 L8 38" stroke="#C41E3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="text-[11px] font-bold uppercase tracking-widest text-[#A0A0A0]">Swipe to start</span>
+</div>
 
 </div>
 </main>
 
-<!-- BottomNavBar -->
-<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-end px-4 pb-4 pointer-events-none">
-<a href="/01/" class="pointer-events-auto btn-primary bg-[#C41E3A] text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
-                GET STARTED
-                <span class="material-symbols-outlined ml-1 text-[16px]" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</footer>
+<style>
+@keyframes swipeLeftHand {
+  0%, 100% { transform: translateX(12px); opacity: 0.5; }
+  50% { transform: translateX(-12px); opacity: 1; }
+}
+.swipe-hand {
+    animation: swipeLeftHand 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 8px rgba(196,30,58,0.2));
+}
+</style>
 
+<script>
+(function(){
+  function go(){
+    fadeToPage('/contents/?v=2');
+  }
+
+  /* Click/tap the swipe indicator */
+  var si = document.querySelector('.swipe-indicator');
+  if(si) si.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); go(); });
+
+  /* Touch swipe */
+  let startX=0,startY=0,startTime=0;
+  const th=50, re=120, tm=600;
+  document.addEventListener('touchstart', e=>{
+    const t=e.changedTouches[0];
+    startX=t.pageX; startY=t.pageY; startTime=new Date().getTime();
+  },{passive:true});
+  document.addEventListener('touchend', e=>{
+    const t=e.changedTouches[0], dx=t.pageX-startX, dy=t.pageY-startY;
+    if((new Date().getTime()-startTime)<=tm && Math.abs(dx)>=th && Math.abs(dy)<=re && dx<0) go();
+  },{passive:true});
+
+  /* Mouse drag for desktop testing */
+  let mDown=false, mx0=0, my0=0, mt0=0;
+  document.addEventListener('mousedown', e=>{ mDown=true; mx0=e.clientX; my0=e.clientY; mt0=new Date().getTime(); });
+  document.addEventListener('mouseup', e=>{
+    if(!mDown) return; mDown=false;
+    const dx=e.clientX-mx0, dy=e.clientY-my0;
+    if((new Date().getTime()-mt0)<=tm && Math.abs(dx)>=th && Math.abs(dy)<=re && dx<0) go();
+  });
+})();
+</script>
+
+
+<script>
+/* Smooth body fade transition */
+function fadeToPage(url){
+  document.body.style.opacity = '0';
+  document.body.style.transform = 'scale(0.97)';
+  setTimeout(function(){ window.location.href = url; }, 650);
+}
+/* Fade in on page load */
+window.addEventListener('DOMContentLoaded', function(){
+  requestAnimationFrame(function(){
+    document.body.classList.add('page-ready');
+  });
+});
+</script>
 </body>
 </html>

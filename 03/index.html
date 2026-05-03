@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -142,22 +145,66 @@
 <style>
     body { min-height: max(884px, 100dvh); }
   </style>
-</head>
-<body class="antialiased min-h-screen flex flex-col">
 
-<nav class="flex items-center w-full px-6 h-16 bg-[#0F0F0F] border-b border-white/5 sticky top-0 z-50">
-<a href="/start/" class="font-['Inter'] text-[12px] tracking-[0.1em] uppercase font-bold text-[#A0A0A0] hover:text-[#FAFAF8] transition-colors no-underline cursor-pointer">USER MANUAL</a>
-<div class="flex-1 flex justify-center gap-2">
-<div class="w-2 h-2 rounded-full bg-white/20"></div>
-<div class="w-2 h-2 rounded-full bg-white/20"></div>
-<div class="w-2 h-2 rounded-full bg-[#C41E3A] animate-pulse"></div>
-<div class="w-2 h-2 rounded-full bg-white/20"></div>
-<div class="w-2 h-2 rounded-full bg-white/20"></div>
-<div class="w-2 h-2 rounded-full bg-white/20"></div>
-<div class="w-2 h-2 rounded-full bg-white/20"></div>
-</div>
+<style>
+html { background: #0F0F0F; }
+body {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+body.page-ready {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>
+<style>
+@keyframes pulseStep {
+  0%, 100% { transform: scale(1.1); box-shadow: 0 0 0 0 rgba(196,30,58,0.4); }
+  50% { transform: scale(1.3); box-shadow: 0 0 12px 4px rgba(196,30,58,0.15); }
+}
+.progress-active {
+  animation: pulseStep 2s ease-in-out infinite;
+}
+</style>
+<script>
+function fadeToPage(url){
+  document.body.style.opacity = '0';
+  document.body.style.transform = 'scale(0.97)';
+  setTimeout(function(){ window.location.href = url; }, 650);
+}
+window.addEventListener('DOMContentLoaded', function(){
+  requestAnimationFrame(function(){
+    document.body.classList.add('page-ready');
+  });
+});
+</script>
+<body class="bg-[#0F0F0F] min-h-screen">
+<nav class="flex items-center w-full px-3 h-[72px] bg-[#0F0F0F] border-b border-white/5 sticky top-0 z-50 gap-2">
+  <a href="/start/?v=2" class="flex-shrink-0 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-[#A0A0A0] hover:text-[#FAFAF8] transition-all no-underline active:scale-90">
+    <span class="material-symbols-outlined text-[20px]">close</span>
+  </a>
+  <div class="flex items-center gap-0 flex-1 px-1 overflow-hidden">
+    <a href="/contents/?v=2" title="Contents" class="opacity-100 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-[#C41E3A] flex items-center justify-center text-white text-[8px] font-bold flex-shrink-0">✓</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#C41E3A"></div>
+    <a href="/01/?v=2" title="Create Account" class="opacity-100 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-[#C41E3A] flex items-center justify-center text-white text-[8px] font-bold flex-shrink-0">✓</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#C41E3A"></div>
+    <a href="/02/?v=2" title="Log In" class="opacity-100 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-[#C41E3A] flex items-center justify-center text-white text-[8px] font-bold flex-shrink-0">✓</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#C41E3A"></div>
+    <a href="/03/?v=2" title="Explore App" class="opacity-100 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[22px] h-[22px] rounded-full bg-transparent border-2 border-[#C41E3A] flex items-center justify-center text-[#C41E3A] text-[9px] font-bold flex-shrink-0 progress-active">4</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
+    <a href="/04/?v=2" title="Book" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">5</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
+    <a href="/05/?v=2" title="Manage" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">6</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
+    <a href="/06/?v=2" title="Profile" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">7</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
+    <a href="/07/?v=2" title="Security" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">8</div></a>
+    <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
+    <a href="/finish/?v=2" title="Finish" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">★</div></a>
+  </div>
+  <span class="text-[9px] font-bold uppercase tracking-wider text-[#C41E3A] flex-shrink-0 ml-1">Explore App</span>
 </nav>
-
 <main class="flex-grow px-6 pt-8 pb-32 max-w-2xl mx-auto w-full">
 
 <header class="mb-8 anim-fade-up d-100">
@@ -226,17 +273,68 @@
 </div>
 
 </main>
+<script>
+(function(){
+  const pageOrder = ['/contents/','/01/','/02/','/03/','/04/','/05/','/06/','/07/','/finish/'];
+  const cur = window.location.pathname;
+  const idx = pageOrder.indexOf(cur);
 
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between px-4 pb-4 pointer-events-none">
-<a href="/02/" class="pointer-events-auto btn-nav bg-white/10 border border-white/40 text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
-<span class="material-symbols-outlined mr-1 text-[16px]" data-icon="arrow_back">arrow_back</span>
-            PREV
-        </a>
-<a href="/04/" class="pointer-events-auto btn-nav bg-[#C41E3A] text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest shadow-lg shadow-[#C41E3A]/20 no-underline">
-            NEXT
-            <span class="material-symbols-outlined ml-1 text-[16px]" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</nav>
+  /* Horizontal swipe */
+  let startX=0, startY=0, startTime=0;
+  document.addEventListener('touchstart', e=>{
+    const t=e.changedTouches[0]; startX=t.pageX; startY=t.pageY; startTime=Date.now();
+  },{passive:true});
+  document.addEventListener('touchend', e=>{
+    const t=e.changedTouches[0], dx=t.pageX-startX, dy=t.pageY-startY;
+    if((Date.now()-startTime)<=600 && Math.abs(dx)>=50 && Math.abs(dy)<=120){
+      if(dx<0 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
+      else if(dx>0 && idx>0) fadeToPage(pageOrder[idx-1]);
+    }
+  },{passive:true});
 
+  /* Mouse drag for desktop */
+  let mDown=false, mx0=0, my0=0, mt0=0;
+  document.addEventListener('mousedown', e=>{ mDown=true; mx0=e.clientX; my0=e.clientY; mt0=Date.now(); });
+  document.addEventListener('mouseup', e=>{
+    if(!mDown) return; mDown=false;
+    const dx=e.clientX-mx0, dy=e.clientY-my0;
+    if((Date.now()-mt0)<=600 && Math.abs(dx)>=50 && Math.abs(dy)<=120){
+      if(dx<0 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
+      else if(dx>0 && idx>0) fadeToPage(pageOrder[idx-1]);
+    }
+  });
+
+  /* Scroll overscroll (vertical pull at boundaries) */
+  let sY=0, sX=0, track=false, atTop=false, atBottom=false;
+  document.addEventListener('touchstart', e=>{
+    const t=e.touches[0]; sX=t.pageX; sY=t.pageY;
+    atTop=window.scrollY<=2; atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-2);
+    track=true;
+  },{passive:true});
+  document.addEventListener('touchmove', e=>{
+    if(!track) return;
+    const t=e.touches[0], dy=sY-t.pageY, dx=Math.abs(t.pageX-sX);
+    if(dx>Math.abs(dy)+30){ track=false; return; }
+    if(atTop && dy<-50 && idx>0){ track=false; fadeToPage(pageOrder[idx-1]); }
+    if(atBottom && dy>50 && idx<pageOrder.length-1){ track=false; fadeToPage(pageOrder[idx+1]); }
+  },{passive:true});
+  document.addEventListener('touchend', ()=>{ track=false; },{passive:true});
+
+  /* Wheel overscroll (desktop) */
+  let wAccum=0, wTimer=null;
+  window.addEventListener('wheel', e=>{
+    const top=window.scrollY<=2, bot=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-2);
+    if((top && e.deltaY<0)||(bot && e.deltaY>0)){
+      wAccum+=e.deltaY; clearTimeout(wTimer);
+      wTimer=setTimeout(()=>{ wAccum=0; },200);
+      if(Math.abs(wAccum)>120){
+        wAccum=0;
+        if(top && e.deltaY<0 && idx>0) fadeToPage(pageOrder[idx-1]);
+        if(bot && e.deltaY>0 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
+      }
+    }
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
