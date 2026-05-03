@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                "tertiary-fixed": "#9cf1ed",
+                "on-tertiary-fixed-variant": "#00504d",
+                "secondary": "#e6c364",
+                "inverse-on-surface": "#3e2c2c",
+                "surface-tint": "#ffb3b4",
+                "on-surface-variant": "#e3bebd",
+                "on-tertiary": "#003735",
+                "surface": "#1e0f10",
+                "surface-bright": "#473535",
+                "on-primary": "#680016",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#241a00",
+                "on-background": "#f9dcdb",
+                "outline": "#aa8989",
+                "outline-variant": "#5b4040",
+                "inverse-primary": "#ba1434",
+                "background": "#0F0F0F",
+                "secondary-fixed": "#ffe08f",
+                "tertiary": "#80d5d1",
+                "primary-container": "#c41e3a",
+                "on-secondary-fixed-variant": "#584400",
+                "surface-container-low": "#271718",
+                "on-primary-fixed": "#40000a",
+                "error": "#ffb4ab",
+                "error-container": "#93000a",
+                "surface-container-highest": "#423030",
+                "on-tertiary-container": "#9cf2ed",
+                "on-primary-container": "#ffdada",
+                "primary": "#ffb3b4",
+                "surface-container": "#2b1b1c",
+                "secondary-container": "#785d00",
+                "surface-container-high": "#372626",
+                "primary-fixed": "#ffdad9",
+                "surface-dim": "#1e0f10",
+                "on-surface": "#f9dcdb",
+                "on-tertiary-fixed": "#00201f",
+                "primary-fixed-dim": "#ffb3b4",
+                "surface-container-lowest": "#180a0b",
+                "inverse-surface": "#f9dcdb",
+                "secondary-fixed-dim": "#e6c364",
+                "on-secondary": "#3d2e00",
+                "on-error-container": "#ffdad6",
+                "on-secondary-container": "#fdd977",
+                "on-primary-fixed-variant": "#920023",
+                "tertiary-fixed-dim": "#80d5d1",
+                "tertiary-container": "#00716e",
+                "surface-variant": "#423030"
+            },
+            borderRadius: {
+                DEFAULT: "0.25rem",
+                lg: "0.5rem",
+                xl: "0.75rem",
+                full: "9999px"
+            },
+            spacing: {
+                "container-padding": "24px",
+                gutter: "16px",
+                "section-gap": "80px",
+                "stack-lg": "32px",
+                "stack-md": "16px",
+                "stack-sm": "8px"
+            },
+            fontFamily: {
+                h2: ["Inter"],
+                body: ["Inter"],
+                label: ["Inter"],
+                h1: ["Inter"]
+            },
+            fontSize: {
+                h2: ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700"}],
+                body: ["16px", {lineHeight: "1.6", letterSpacing: "0", fontWeight: "400"}],
+                label: ["12px", {lineHeight: "1", letterSpacing: "0.08em", fontWeight: "500"}],
+                h1: ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0F0F0F;
+            color: #FAFAF8;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-card-border {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .anim-fade-up {
+            animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+        }
+        .d-100 { animation-delay: 0.1s; }
+        .d-200 { animation-delay: 0.2s; }
+        .d-300 { animation-delay: 0.3s; }
+        .d-400 { animation-delay: 0.4s; }
+        .d-500 { animation-delay: 0.5s; }
+        .d-600 { animation-delay: 0.6s; }
+        .d-700 { animation-delay: 0.7s; }
+        .d-800 { animation-delay: 0.8s; }
+
+        .toc-card {
+            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .toc-card:hover {
+            transform: translateX(6px);
+            background-color: rgba(255,255,255,0.04);
+            border-color: rgba(196, 30, 58, 0.3);
+        }
+        .toc-card:active {
+            transform: scale(0.98);
+        }
+        .btn-nav {
+            transition: transform 0.15s ease, filter 0.2s ease;
+        }
+        .btn-nav:hover { filter: brightness(1.1); }
+        .btn-nav:active { transform: scale(0.96); }
+    </style>
+<style>
+    body { min-height: max(884px, 100dvh); }
+  </style>
+</head>
+<body class="bg-[#0F0F0F] min-h-screen">
+
+
+
+<main class="px-6 pt-4 pb-8 max-w-2xl mx-auto">
+
+<!-- Headline Section -->
+<div class="mb-8 anim-fade-up d-100">
+<h2 class="font-h2 text-h2 text-[#FAFAF8] text-left">What You'll Learn</h2>
+<p class="text-[14px] text-[#A0A0A0] mt-2">Tap any section to jump straight to it.</p>
+</div>
+
+<!-- Table of Contents Cards Stack -->
+<div class="flex flex-col gap-3">
+
+<!-- Card 01 -->
+<a href="../02_creating_an_account/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-300 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">01</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Creating an Account</h3>
+<p class="text-[13px] text-[#A0A0A0]">Sign up, verify email, and referral codes.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+<!-- Card 02 -->
+<a href="../03_logging_in/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-400 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">02</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Logging In</h3>
+<p class="text-[13px] text-[#A0A0A0]">Email, Google OAuth, 2FA, and password reset.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+<!-- Card 03 -->
+<a href="../04_exploring_the_app/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-500 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">03</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Exploring the App</h3>
+<p class="text-[13px] text-[#A0A0A0]">Home, Services, Team, Products, and Journal.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+<!-- Card 04 -->
+<a href="../05_booking_appointment/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-600 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">04</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Booking an Appointment</h3>
+<p class="text-[13px] text-[#A0A0A0]">4-step wizard and payment options.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+<!-- Card 05 -->
+<a href="../06_managing_appointments/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-700 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">05</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Managing Appointments</h3>
+<p class="text-[13px] text-[#A0A0A0]">Portal, stats, QR payments, and reviews.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+<!-- Card 06 -->
+<a href="../07_profile_loyalty/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-800 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">06</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Profile &amp; Loyalty</h3>
+<p class="text-[13px] text-[#A0A0A0]">Edit profile, stamps, and referrals.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+<!-- Card 07 -->
+<a href="../08_security_support/code.html" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-800 no-underline">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+<span class="text-[13px] font-bold text-[#C41E3A]">07</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h3 class="text-[16px] font-semibold text-[#FAFAF8]">Security &amp; Support</h3>
+<p class="text-[13px] text-[#A0A0A0]">2FA, password changes, and contact info.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#A0A0A0]" data-icon="chevron_right">chevron_right</span>
+</a>
+
+</div>
+</main>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between px-4 pb-4 pointer-events-none">
+<a href="../01_getting_started/code.html" class="pointer-events-auto btn-nav bg-transparent border border-white/10 text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
+<span class="material-symbols-outlined mr-1 text-[16px]" data-icon="arrow_back">arrow_back</span>
+            ← PREV
+        </a>
+<a href="../02_creating_an_account/code.html" class="pointer-events-auto btn-nav bg-[#C41E3A] text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest shadow-lg shadow-[#C41E3A]/20 no-underline">
+            NEXT →
+            <span class="material-symbols-outlined ml-1 text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</nav>
+
+<!-- Spacer for bottom nav -->
+<div class="h-32"></div>
+
+</body>
+</html>

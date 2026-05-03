@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#9cf1ed",
+                        "on-tertiary-fixed-variant": "#00504d",
+                        "secondary": "#e6c364",
+                        "inverse-on-surface": "#3e2c2c",
+                        "surface-tint": "#ffb3b4",
+                        "on-surface-variant": "#e3bebd",
+                        "on-tertiary": "#003735",
+                        "surface": "#1e0f10",
+                        "surface-bright": "#473535",
+                        "on-primary": "#680016",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#241a00",
+                        "on-background": "#f9dcdb",
+                        "outline": "#aa8989",
+                        "outline-variant": "#5b4040",
+                        "inverse-primary": "#ba1434",
+                        "background": "#0F0F0F",
+                        "secondary-fixed": "#ffe08f",
+                        "tertiary": "#80d5d1",
+                        "primary-container": "#c41e3a",
+                        "on-secondary-fixed-variant": "#584400",
+                        "surface-container-low": "#271718",
+                        "on-primary-fixed": "#40000a",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#423030",
+                        "on-tertiary-container": "#9cf2ed",
+                        "on-primary-container": "#ffdada",
+                        "primary": "#ffb3b4",
+                        "surface-container": "#2b1b1c",
+                        "secondary-container": "#785d00",
+                        "surface-container-high": "#372626",
+                        "primary-fixed": "#ffdad9",
+                        "surface-dim": "#1e0f10",
+                        "on-surface": "#f9dcdb",
+                        "on-tertiary-fixed": "#00201f",
+                        "primary-fixed-dim": "#ffb3b4",
+                        "surface-container-lowest": "#180a0b",
+                        "inverse-surface": "#f9dcdb",
+                        "secondary-fixed-dim": "#e6c364",
+                        "on-secondary": "#3d2e00",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#fdd977",
+                        "on-primary-fixed-variant": "#920023",
+                        "tertiary-fixed-dim": "#80d5d1",
+                        "tertiary-container": "#00716e",
+                        "surface-variant": "#423030"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "container-padding": "24px",
+                        gutter: "16px",
+                        "section-gap": "80px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    fontFamily: {
+                        h2: ["Inter"],
+                        body: ["Inter"],
+                        label: ["Inter"],
+                        h1: ["Inter"]
+                    },
+                    fontSize: {
+                        h2: ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700"}],
+                        body: ["16px", {lineHeight: "1.6", letterSpacing: "0", fontWeight: "400"}],
+                        label: ["12px", {lineHeight: "1", letterSpacing: "0.08em", fontWeight: "500"}],
+                        h1: ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0F0F0F;
+            color: #FAFAF8;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .anim-fade-up {
+            animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+        }
+        .d-100 { animation-delay: 0.1s; }
+        .d-200 { animation-delay: 0.2s; }
+        .d-300 { animation-delay: 0.3s; }
+        .d-400 { animation-delay: 0.4s; }
+        .d-500 { animation-delay: 0.5s; }
+        .d-600 { animation-delay: 0.6s; }
+        .d-700 { animation-delay: 0.7s; }
+        .screenshot-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .screenshot-card:hover {
+            transform: scale(1.015);
+            box-shadow: 0 8px 30px rgba(196, 30, 58, 0.12);
+        }
+        .step-item {
+            transition: transform 0.15s ease, background-color 0.2s ease;
+            border-radius: 8px;
+            padding: 8px;
+            margin: -8px;
+        }
+        .step-item:active {
+            transform: scale(0.98);
+            background-color: rgba(255,255,255,0.02);
+        }
+        .btn-nav {
+            transition: transform 0.15s ease, filter 0.2s ease;
+        }
+        .btn-nav:hover { filter: brightness(1.1); }
+        .btn-nav:active { transform: scale(0.96); }
+    </style>
+<style>
+    body { min-height: max(884px, 100dvh); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+<nav class="flex items-center w-full px-6 h-16 bg-[#0F0F0F] border-b border-white/5 sticky top-0 z-50">
+<a href="../01_getting_started/code.html" class="font-['Inter'] text-[12px] tracking-[0.1em] uppercase font-bold text-[#A0A0A0] hover:text-[#FAFAF8] transition-colors no-underline cursor-pointer">USER MANUAL</a>
+<div class="flex-1 flex justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-[#C41E3A] animate-pulse"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+</div>
+</nav>
+
+<main class="flex-grow px-6 pt-8 pb-32 max-w-2xl mx-auto w-full">
+
+<header class="mb-8 anim-fade-up d-100">
+<p class="text-[12px] font-bold uppercase tracking-widest text-[#A0A0A0] mb-2 font-label">Step 4 of 7</p>
+<h2 class="font-h2 text-h2 text-[#FAFAF8] leading-tight">Booking an Appointment</h2>
+</header>
+
+<div class="w-full max-w-[300px] mx-auto mb-10 anim-fade-up d-200">
+            <img src="screen.png" alt="Book Appointment" class="w-full h-auto rounded-[16px] shadow-[0_12px_40px_rgba(0,0,0,0.5)]"/>
+        </div>
+
+<section class="space-y-6 mb-10">
+<div class="step-item flex gap-4 anim-fade-up d-300">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
+<span class="text-[11px] font-bold text-white">1</span>
+</div>
+<div>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Start Booking</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Click <strong class="text-[#FAFAF8]">Secure Your Spot</strong> on the homepage or <strong class="text-[#FAFAF8]">Book Appointment</strong> from the navigation bar.</p>
+</div>
+</div>
+<div class="step-item flex gap-4 anim-fade-up d-400">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
+<span class="text-[11px] font-bold text-white">2</span>
+</div>
+<div>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Step 1 — Select a Service</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Browse the available services and tap the one you want. Prices and durations are displayed for each option.</p>
+</div>
+</div>
+<div class="step-item flex gap-4 anim-fade-up d-500">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
+<span class="text-[11px] font-bold text-white">3</span>
+</div>
+<div>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Step 2 — Choose Your Barber</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Pick your preferred barber or select <strong class="text-[#FAFAF8]">Any Barber</strong> for auto-assignment based on availability.</p>
+</div>
+</div>
+<div class="step-item flex gap-4 anim-fade-up d-600">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
+<span class="text-[11px] font-bold text-white">4</span>
+</div>
+<div>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Step 3 — Pick Date &amp; Time</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Choose a date from the calendar, then tap an available time slot. Real-time availability is shown — grayed-out slots are taken.</p>
+</div>
+</div>
+<div class="step-item flex gap-4 anim-fade-up d-600">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
+<span class="text-[11px] font-bold text-white">5</span>
+</div>
+<div>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Step 4 — Review &amp; Pay</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Add any special requests, then choose your payment:
+                <br/>• <strong class="text-[#FAFAF8]">Pay at Shop</strong> — Free. First-timers verify via email OTP.
+                <br/>• <strong class="text-[#FAFAF8]">Priority Reserve</strong> — Pay a small deposit (e.g. ₱2) via GCash or Maya to lock your slot.</p>
+</div>
+</div>
+<div class="step-item flex gap-4 anim-fade-up d-700">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#C41E3A] flex items-center justify-center mt-0.5 shadow-lg shadow-[#C41E3A]/20">
+<span class="text-[11px] font-bold text-white">6</span>
+</div>
+<div>
+<h3 class="text-[15px] font-bold text-[#FAFAF8] mb-1">Confirm &amp; Scan QR</h3>
+<p class="text-[14px] text-[#A0A0A0] leading-relaxed">Tap <strong class="text-[#FAFAF8]">Confirm Booking</strong>. If you chose Priority Reserve, a QR code appears. Scan it with GCash or Maya — payment is auto-detected instantly.</p>
+</div>
+</div>
+</section>
+
+<div class="bg-[#C9A84C]/10 border-l-2 border-[#C9A84C] p-5 rounded-r-[4px] anim-fade-up d-700">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#C9A84C] text-sm" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="text-[#C9A84C] text-[12px] font-bold uppercase tracking-widest">Pro Tip:</span>
+</div>
+<p class="text-sm text-[#e6c364]/80 leading-relaxed">Book during non-peak hours (Tuesday–Thursday) for the best slot availability and a more relaxed session.</p>
+</div>
+
+</main>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between px-4 pb-4 pointer-events-none">
+<a href="../04_exploring_the_app/code.html" class="pointer-events-auto btn-nav bg-white/10 border border-white/40 text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest no-underline">
+<span class="material-symbols-outlined mr-1 text-[16px]" data-icon="arrow_back">arrow_back</span>
+            ← PREV
+        </a>
+<a href="../06_managing_appointments/code.html" class="pointer-events-auto btn-nav bg-[#C41E3A] text-white rounded-full px-5 h-[40px] flex items-center justify-center font-['Inter'] text-[11px] font-bold uppercase tracking-widest shadow-lg shadow-[#C41E3A]/20 no-underline">
+            NEXT →
+            <span class="material-symbols-outlined ml-1 text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</nav>
+
+</body>
+</html>
