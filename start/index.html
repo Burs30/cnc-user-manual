@@ -243,13 +243,10 @@ body.page-ready {
 <div class="flex-1 min-h-[20px]"></div>
 
 <!-- Swipe Indicator -->
-<div class="swipe-indicator flex flex-col items-center gap-1.5 pointer-events-auto anim-fade-up d-700 pb-4 mt-2">
-    <svg class="swipe-hand" width="48" height="48" viewBox="0 0 64 64" fill="none">
-        <path d="M38 10c0-2.2-1.8-4-4-4s-4 1.8-4 4v16" stroke="#A0A0A0" stroke-width="3" stroke-linecap="round"/>
-        <path d="M30 26V14c0-2.2-1.8-4-4-4s-4 1.8-4 4v16" stroke="#A0A0A0" stroke-width="3" stroke-linecap="round"/>
-        <path d="M22 30V20c0-2.2-1.8-4-4-4s-4 1.8-4 4v20c0 6 4 12 10 14h12c6 0 12-4 14-10l4-12c1-3-1-6-4-7s-6 1-7 4l-2 6V14c0-2.2-1.8-4-4-4s-4 1.8-4 4v12" stroke="#FAFAF8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12 32 L4 32 M8 26 L4 32 L8 38" stroke="#C41E3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+<div class="swipe-indicator flex flex-col items-center gap-2 pointer-events-auto anim-fade-up d-700 pb-4 mt-2">
+    <div class="swipe-hand-wrap">
+        <span class="material-symbols-outlined text-[32px] text-[#FAFAF8]">swipe_left</span>
+    </div>
     <span class="text-[11px] font-bold uppercase tracking-widest text-[#A0A0A0]">Swipe to start</span>
 </div>
 
@@ -258,12 +255,14 @@ body.page-ready {
 
 <style>
 @keyframes swipeLeftHand {
-  0%, 100% { transform: translateX(12px); opacity: 0.5; }
-  50% { transform: translateX(-12px); opacity: 1; }
+  0%, 100% { transform: translateX(10px); opacity: 0.4; }
+  50% { transform: translateX(-10px); opacity: 1; }
 }
-.swipe-hand {
+.swipe-hand-wrap {
     animation: swipeLeftHand 2s ease-in-out infinite;
-    filter: drop-shadow(0 2px 8px rgba(196,30,58,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
 

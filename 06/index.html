@@ -314,35 +314,31 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  /* Scroll overscroll (vertical pull at boundaries) */
-  let sY=0, sX=0, track=false, atTop=false, atBottom=false;
+  /* Smooth scroll-to-boundary transition (touch) */
+  let lastTouchY=0, touchLock=false;
   document.addEventListener('touchstart', e=>{
-    const t=e.touches[0]; sX=t.pageX; sY=t.pageY;
-    atTop=window.scrollY<=2; atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-2);
-    track=true;
+    lastTouchY=e.touches[0].clientY;
+    touchLock=false;
   },{passive:true});
   document.addEventListener('touchmove', e=>{
-    if(!track) return;
-    const t=e.touches[0], dy=sY-t.pageY, dx=Math.abs(t.pageX-sX);
-    if(dx>Math.abs(dy)+30){ track=false; return; }
-    if(atTop && dy<-50 && idx>0){ track=false; fadeToPage(pageOrder[idx-1]); }
-    if(atBottom && dy>50 && idx<pageOrder.length-1){ track=false; fadeToPage(pageOrder[idx+1]); }
+    if(touchLock) return;
+    const y=e.touches[0].clientY;
+    const dy=lastTouchY-y;
+    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-20);
+    const atTop=window.scrollY<=10;
+    if(atBottom && dy>10 && idx<pageOrder.length-1){ touchLock=true; fadeToPage(pageOrder[idx+1]); return; }
+    if(atTop && dy<-10 && idx>0){ touchLock=true; fadeToPage(pageOrder[idx-1]); return; }
+    lastTouchY=y;
   },{passive:true});
-  document.addEventListener('touchend', ()=>{ track=false; },{passive:true});
 
-  /* Wheel overscroll (desktop) */
-  let wAccum=0, wTimer=null;
+  /* Smooth scroll-to-boundary transition (wheel/desktop) */
+  let wheelLock=false;
   window.addEventListener('wheel', e=>{
-    const top=window.scrollY<=2, bot=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-2);
-    if((top && e.deltaY<0)||(bot && e.deltaY>0)){
-      wAccum+=e.deltaY; clearTimeout(wTimer);
-      wTimer=setTimeout(()=>{ wAccum=0; },200);
-      if(Math.abs(wAccum)>120){
-        wAccum=0;
-        if(top && e.deltaY<0 && idx>0) fadeToPage(pageOrder[idx-1]);
-        if(bot && e.deltaY>0 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
-      }
-    }
+    if(wheelLock) return;
+    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-20);
+    const atTop=window.scrollY<=10;
+    if(atBottom && e.deltaY>0 && idx<pageOrder.length-1){ wheelLock=true; fadeToPage(pageOrder[idx+1]); }
+    if(atTop && e.deltaY<0 && idx>0){ wheelLock=true; fadeToPage(pageOrder[idx-1]); }
   },{passive:true});
 })();
 </script>
