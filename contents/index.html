@@ -7,6 +7,9 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -15,54 +18,11 @@
         theme: {
           extend: {
             colors: {
-                "tertiary-fixed": "#9cf1ed",
-                "on-tertiary-fixed-variant": "#00504d",
-                "secondary": "#e6c364",
-                "inverse-on-surface": "#3e2c2c",
-                "surface-tint": "#ffb3b4",
-                "on-surface-variant": "#e3bebd",
-                "on-tertiary": "#003735",
-                "surface": "#1e0f10",
-                "surface-bright": "#473535",
-                "on-primary": "#680016",
-                "on-error": "#690005",
-                "on-secondary-fixed": "#241a00",
-                "on-background": "#f9dcdb",
-                "outline": "#aa8989",
-                "outline-variant": "#5b4040",
-                "inverse-primary": "#ba1434",
-                "background": "#0F0F0F",
-                "secondary-fixed": "#ffe08f",
-                "tertiary": "#80d5d1",
-                "primary-container": "#c41e3a",
-                "on-secondary-fixed-variant": "#584400",
-                "surface-container-low": "#271718",
-                "on-primary-fixed": "#40000a",
-                "error": "#ffb4ab",
-                "error-container": "#93000a",
-                "surface-container-highest": "#423030",
-                "on-tertiary-container": "#9cf2ed",
-                "on-primary-container": "#ffdada",
-                "primary": "#ffb3b4",
-                "surface-container": "#2b1b1c",
-                "secondary-container": "#785d00",
-                "surface-container-high": "#372626",
-                "primary-fixed": "#ffdad9",
-                "surface-dim": "#1e0f10",
-                "on-surface": "#f9dcdb",
-                "on-tertiary-fixed": "#00201f",
-                "primary-fixed-dim": "#ffb3b4",
-                "surface-container-lowest": "#180a0b",
-                "inverse-surface": "#f9dcdb",
-                "secondary-fixed-dim": "#e6c364",
-                "on-secondary": "#3d2e00",
-                "on-error-container": "#ffdad6",
-                "on-secondary-container": "#fdd977",
-                "on-primary-fixed-variant": "#920023",
-                "tertiary-fixed-dim": "#80d5d1",
-                "tertiary-container": "#00716e",
-                "surface-variant": "#423030"
-            },
+                                                "secondary": "#e6c364",
+                                                                                                                                                                                                                                "background": "#0F0F0F",
+                                                "primary-container": "#c41e3a",
+                                                                                                                                                                                                                                                "on-surface": "#f9dcdb",
+                                                                                                                                                                                                            },
             borderRadius: {
                 DEFAULT: "0.25rem",
                 lg: "0.5rem",
@@ -181,27 +141,27 @@ window.addEventListener('DOMContentLoaded', function(){
 </script>
 <body class="bg-[#0F0F0F] min-h-screen">
 <nav class="flex items-center w-full px-3 h-[72px] bg-[#0F0F0F] border-b border-white/5 sticky top-0 z-50 gap-2">
-  <a href="/start/?v=2" class="flex-shrink-0 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-[#A0A0A0] hover:text-[#FAFAF8] transition-all no-underline active:scale-90">
+  <a href="/start/" class="flex-shrink-0 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-[#A0A0A0] hover:text-[#FAFAF8] transition-all no-underline active:scale-90">
     <span class="material-symbols-outlined text-[20px]">close</span>
   </a>
   <div class="flex items-center gap-0 flex-1 px-1 overflow-hidden">
-    <a href="/contents/?v=2" title="Contents" class="opacity-100 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[22px] h-[22px] rounded-full bg-transparent border-2 border-[#C41E3A] flex items-center justify-center text-[#C41E3A] text-[9px] font-bold flex-shrink-0 progress-active">1</div></a>
+    <a href="/contents/" title="Contents" class="opacity-100 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[22px] h-[22px] rounded-full bg-transparent border-2 border-[#C41E3A] flex items-center justify-center text-[#C41E3A] text-[9px] font-bold flex-shrink-0 progress-active">1</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/01/?v=2" title="Create Account" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">2</div></a>
+    <a href="/01/" title="Create Account" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">2</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/02/?v=2" title="Log In" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">3</div></a>
+    <a href="/02/" title="Log In" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">3</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/03/?v=2" title="Explore App" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">4</div></a>
+    <a href="/03/" title="Explore App" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">4</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/04/?v=2" title="Book" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">5</div></a>
+    <a href="/04/" title="Book" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">5</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/05/?v=2" title="Manage" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">6</div></a>
+    <a href="/05/" title="Manage" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">6</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/06/?v=2" title="Profile" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">7</div></a>
+    <a href="/06/" title="Profile" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">7</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/07/?v=2" title="Security" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">8</div></a>
+    <a href="/07/" title="Security" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">8</div></a>
     <div class="flex-1 h-[2px] mx-0.5" style="background:#333"></div>
-    <a href="/finish/?v=2" title="Finish" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">★</div></a>
+    <a href="/finish/" title="Finish" class="opacity-50 flex items-center justify-center flex-shrink-0 no-underline"><div class="w-[18px] h-[18px] rounded-full bg-transparent border-2 border-[#333] flex items-center justify-center text-[#555] text-[8px] font-bold flex-shrink-0">★</div></a>
   </div>
   <span class="text-[9px] font-bold uppercase tracking-wider text-[#C41E3A] flex-shrink-0 ml-1">Contents</span>
 </nav>
@@ -217,7 +177,7 @@ window.addEventListener('DOMContentLoaded', function(){
 <div class="flex flex-col gap-3">
 
 <!-- Card 01 -->
-<a href="/01/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-300 no-underline">
+<a href="/01/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-300 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">01</span>
@@ -231,7 +191,7 @@ window.addEventListener('DOMContentLoaded', function(){
 </a>
 
 <!-- Card 02 -->
-<a href="/02/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-400 no-underline">
+<a href="/02/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-400 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">02</span>
@@ -245,7 +205,7 @@ window.addEventListener('DOMContentLoaded', function(){
 </a>
 
 <!-- Card 03 -->
-<a href="/03/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-500 no-underline">
+<a href="/03/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-500 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">03</span>
@@ -259,7 +219,7 @@ window.addEventListener('DOMContentLoaded', function(){
 </a>
 
 <!-- Card 04 -->
-<a href="/04/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-600 no-underline">
+<a href="/04/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-600 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">04</span>
@@ -273,7 +233,7 @@ window.addEventListener('DOMContentLoaded', function(){
 </a>
 
 <!-- Card 05 -->
-<a href="/05/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-700 no-underline">
+<a href="/05/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-700 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">05</span>
@@ -287,7 +247,7 @@ window.addEventListener('DOMContentLoaded', function(){
 </a>
 
 <!-- Card 06 -->
-<a href="/06/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-800 no-underline">
+<a href="/06/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-800 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">06</span>
@@ -301,7 +261,7 @@ window.addEventListener('DOMContentLoaded', function(){
 </a>
 
 <!-- Card 07 -->
-<a href="/07/?v=2" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-800 no-underline">
+<a href="/07/" class="toc-card bg-[#1A1A1A] custom-card-border rounded-[12px] p-5 flex items-center justify-between cursor-pointer anim-fade-up d-800 no-underline">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
 <span class="text-[13px] font-bold text-[#C41E3A]">07</span>
