@@ -148,7 +148,7 @@ html { background: #0F0F0F; }
 body {
   opacity: 0;
   transform: scale(0.97);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 body.page-ready {
   opacity: 1;
@@ -280,7 +280,7 @@ body.page-ready {
 function fadeToPage(url){
   document.body.style.opacity = '0';
   document.body.style.transform = 'scale(0.97)';
-  setTimeout(function(){ window.location.href = url; }, 350);
+  setTimeout(function(){ window.location.href = url; }, 200);
 }
 /* Fade in on page load */
 window.addEventListener('DOMContentLoaded', function(){

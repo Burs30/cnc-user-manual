@@ -111,7 +111,7 @@ html { background: #0F0F0F; }
 body {
   opacity: 0;
   transform: scale(0.97);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 body.page-ready {
   opacity: 1;
@@ -131,7 +131,7 @@ body.page-ready {
 function fadeToPage(url){
   document.body.style.opacity = '0';
   document.body.style.transform = 'scale(0.97)';
-  setTimeout(function(){ window.location.href = url; }, 350);
+  setTimeout(function(){ window.location.href = url; }, 200);
 }
 window.addEventListener('DOMContentLoaded', function(){
   requestAnimationFrame(function(){
@@ -264,26 +264,31 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  /* Smooth scroll-to-boundary transition (touch) — triggers on finger release */
-  let touchStartY=0;
+  /* Instant scroll-to-boundary — fires while scrolling, feels native */
+  let lastY=0, triggered=false;
   document.addEventListener('touchstart', e=>{
-    touchStartY=e.touches[0].clientY;
+    lastY=e.touches[0].clientY;
+    triggered=false;
   },{passive:true});
-  document.addEventListener('touchend', e=>{
-    const endY=e.changedTouches[0].clientY;
-    const dy=touchStartY-endY; // positive = scrolled down overall
-    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-30);
-    const atTop=window.scrollY<=15;
-    if(atBottom && dy>40 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
-    if(atTop && dy<-40 && idx>0) fadeToPage(pageOrder[idx-1]);
+  document.addEventListener('touchmove', e=>{
+    if(triggered) return;
+    const y=e.touches[0].clientY;
+    const dy=lastY-y; // positive = finger moving down (scrolling down)
+    lastY=y;
+    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-10);
+    const atTop=window.scrollY<=5;
+    if(atBottom && dy>2 && idx<pageOrder.length-1){ triggered=true; fadeToPage(pageOrder[idx+1]); }
+    if(atTop && dy<-2 && idx>0){ triggered=true; fadeToPage(pageOrder[idx-1]); }
   },{passive:true});
 
-  /* Smooth scroll-to-boundary transition (wheel/desktop) */
+  /* Wheel/desktop — instant at boundary */
+  let wTrig=false;
   window.addEventListener('wheel', e=>{
-    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-30);
-    const atTop=window.scrollY<=15;
-    if(atBottom && e.deltaY>0 && idx<pageOrder.length-1) fadeToPage(pageOrder[idx+1]);
-    if(atTop && e.deltaY<0 && idx>0) fadeToPage(pageOrder[idx-1]);
+    if(wTrig) return;
+    const atBottom=(window.innerHeight+window.scrollY)>=(document.body.scrollHeight-10);
+    const atTop=window.scrollY<=5;
+    if(atBottom && e.deltaY>0 && idx<pageOrder.length-1){ wTrig=true; fadeToPage(pageOrder[idx+1]); }
+    if(atTop && e.deltaY<0 && idx>0){ wTrig=true; fadeToPage(pageOrder[idx-1]); }
   },{passive:true});
 })();
 </script>
